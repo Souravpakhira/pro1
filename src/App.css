@@ -1,38 +1,607 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar__main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 5rem;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 70px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #0000000f;
+  opacity: 1;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin-left: auto;
+}
+
+.nav__links .header__logo {
+  width: 66px;
+  height: 66px;
+}
+
+.nav__links .link {
+  list-style: none;
+  cursor: pointer;
+}
+
+.nav__links .link a {
+  text-align: center;
+  font: 400 16px/22px Open Sans;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  text-decoration: none;
+}
+
+.nav__links .link .link__forYou::after {
+  content: url("./resources/Path\ 2.svg");
+  margin: 0 0 0 8px;
+  display: inline-block;
+}
+
+.nav__links .link__lighting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__links .link__lighting .link__instantApply img {
+  margin-top: 2px;
+  width: 32px;
+  height: 32px;
+}
+
+.nav__links .link .signUp {
+  font: 600 16px/22px Open Sans;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0px;
+  color: #7ecb20;
+  opacity: 1;
+}
+
+.header__loginButton {
+  background: #7ecb20 0% 0% no-repeat padding-box;
+  font: 600 16px/22px Open Sans;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0.48px;
+  border-radius: 19px;
+  opacity: 1;
+  color: white;
+  height: 38px;
+  width: 134px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  outline: none;
+}
+
+.header__loginButton:hover {
+  transform: scale(1.1, 1.1);
+}
+
+/* Hero section */
+
+.hero {
+  margin-top: 211px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero .hero__header {
+  font: Bold 41px/56px Open Sans;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  width: 648px;
+  height: 56px;
+  margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.hero .hero__body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 0.8;
+  width: 1008px;
+  height: 76px;
+  margin: 10px auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero .hero__button {
+  background: #7ecb20 0% 0% no-repeat padding-box;
+  border-radius: 27px;
+  border: none;
+  width: 236px;
+  height: 53px;
+  font: 700 24px/33px Open Sans;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 0px;
+  color: #ffffff;
+  text-transform: capitalize;
+  opacity: 1;
+  margin: 15px auto;
+  cursor: pointer;
+}
+
+/* modal background */
+
+.modal__background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background: #212020 0% 0% no-repeat padding-box;
+  opacity: 0.6;
+  z-index: 10;
+}
+
+/* Model Login */
+
+.model__login {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 418px;
+  height: 768px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  opacity: 1;
+  z-index: 20;
+}
+
+.model__login .model__login__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 4.31rem;
+  justify-content: space-between;
+}
+
+.model__login .model__login__header .loginText {
+  width: 4rem;
+  height: 2rem;
+  text-align: center;
+  font: 700 24px/32px Segoe UI;
+  letter-spacing: 0px;
+  color: #333333;
+  opacity: 1;
+  margin-left: 2.5rem;
+}
+
+.model__login .model__login__header .loginCross {
+  width: 1.3rem;
+  height: 1rem;
+  opacity: 1;
+  margin-right: 2.5rem;
+  cursor: pointer;
+}
+
+.model__login .model__login__header .loginCross .line1 {
+  background-color: gray;
+  width: 1.3rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+  transform: rotate(-45deg) translate(-3px, 1px);
+}
+
+.model__login .model__login__header .loginCross .line2 {
+  background-color: gray;
+  width: 1.3rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+  transform: rotate(45deg) translate(-5px, -2px);
+}
+
+.model__login .modal__login__body {
+  padding: 1rem 0rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  margin: 6.5rem auto;
+}
+
+.model__login .modal__login__body h2 {
+  width: 40%;
+  margin: 1rem auto;
+  border-bottom: 2px solid #7ecb20;
+  text-align: center;
+  font: 600 20px/27px Segoe UI;
+  letter-spacing: 0px;
+  color: #7ecb20;
+  opacity: 1;
+}
+
+.model__login .modal__login__body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+.model__login .modal__login__body form input {
+  display: block;
+  width: 90%;
+  padding: 0 0.3rem;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 0.57;
+  margin-bottom: 0.8rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.model__login .modal__login__body form input:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.model__login .modal__login__body form .forgetPassword {
+  font: 600 15px/20px Segoe UI;
+  letter-spacing: 0px;
+  color: #7ecb20;
+  opacity: 1;
+  margin-left: auto;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.model__login .modal__login__body form .Login {
+  width: 90%;
+  height: 2.5rem;
+  margin-top: 0.3rem;
+  background: #7ecb20 0% 0% no-repeat padding-box;
+  opacity: 1;
+  text-align: center;
+  font: 600 1.2rem Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  border-radius: 0.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.model__login .modal__login__body .newSignWay {
+  text-align: center;
+  font: 600 16px/21px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  margin: 1.3rem auto 0 auto;
+  width: 14rem;
+  cursor: pointer;
+}
+
+/* Sign Up Model */
+
+.signUp__model {
+  display: none;
+  position: fixed;
+  top: calc((100% - 36rem) / 2);
+  bottom: calc((100% - 36rem) / 2);
+  left: calc((100% - 42rem) / 2);
+  right: calc((100% - 42rem) / 2);
+  width: 42rem;
+  height: 36rem;
+  z-index: 20;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 15px;
+  opacity: 1;
+}
+
+.signUp__model .cross__button {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  top: 4.5%;
+  left: 93.5%;
+  cursor: pointer;
+}
+
+.signUp__model .cross__button .line1 {
+  background-color: gray;
+  width: 1.3rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+  transform: rotate(-45deg) translate(-3px, 1px);
+}
+
+.signUp__model .cross__button .line2 {
+  background-color: gray;
+  width: 1.3rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+  transform: rotate(45deg) translate(-5px, -2px);
+}
+
+.signUp__model .signUp__header {
+  text-align: center;
+  margin-top: 4.8rem;
+  font: 600 33px/44px Segoe UI;
+  letter-spacing: 0px;
+  color: #333333;
+  opacity: 1;
+}
+
+.signUp__model .signUp__headline {
+  text-align: center;
+  font: 400 22px/30px Open Sans;
+  letter-spacing: 0px;
+  color: #212020;
+  opacity: 1;
+  margin: 0.2rem auto;
+}
+
+.signUp__model .signUp__form {
+  display: flex;
+  margin: 4rem 9rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signUp__model .signUp__form .email,
+.signUp__model .signUp__form .password {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 0.57;
+  margin-bottom: 0.77rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  width: 100%;
+  padding: 0 0.3rem;
+}
+
+.signUp__model .signUp__form .email:focus,
+.signUp__model .signUp__form .password:focus {
+  opacity: 1;
+  outline: none;
+}
+
+.signUp__model .signUp__form .name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signUp__model .signUp__form .name input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 0.57;
+  margin-bottom: 0.77rem;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.9rem;
+  width: 48.6%;
+  padding: 0 0.2rem;
+}
+
+.signUp__model .signUp__form .name input:focus {
+  outline: none;
+  opacity: 1;
+}
+
+.signUp__model .signUp__form .signUp__button {
+  background: #7ecb20 0% 0% no-repeat padding-box;
+  opacity: 1;
+  width: 100%;
+  height: 2.5rem;
+  text-align: center;
+  font: 600 22px/30px Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  margin-top: 0.9rem;
+}
+
+/* OTP model */
+
+.otp__model {
+  display: none;
+  position: fixed;
+  top: calc((100% - 36rem) / 2);
+  bottom: calc((100% - 36rem) / 2);
+  left: calc((100% - 42rem) / 2);
+  right: calc((100% - 42rem) / 2);
+  width: 42rem;
+  height: 36rem;
+  z-index: 20;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 15px;
+  opacity: 1;
+}
+
+.otp__model .otp__header {
+  margin-top: 8.8rem;
+  text-align: center;
+  font: 600 30px Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.otp__model .left__button {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  top: 4.5%;
+  left: 4.9%;
+  cursor: pointer;
+}
+
+.otp__model .left__button .line1 {
+  background-color: gray;
+  width: 0.8rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+  transform: rotate(-45deg) translate(-3px, 2px);
+}
+
+.otp__model .left__button .line2 {
+  background-color: gray;
+  width: 1.3rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+}
+
+.otp__model .left__button .line3 {
+  background-color: gray;
+  width: 0.8rem;
+  height: 0.2rem;
+  margin: 0.3rem 0;
+  transform: rotate(45deg) translate(-3px, -2px);
+}
+
+.otp__model .otp__form {
+  margin: 3.2rem 9.3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.otp__model .otp__form .otp__input {
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 0.57;
+  margin-bottom: 0.77rem;
+  height: 3.8rem;
+  border-radius: 2rem;
+  width: 100%;
+  padding: 0 2.2rem;
+  font: 400 1.3rem Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.otp__model .otp__form .otp__input:focus {
+  outline: none;
+}
+
+.otp__model .otp__form .otp__message {
+  text-align: left;
+  font: 400 1.1rem Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  padding-left: 1.05rem;
+}
+
+.otp__model .otp__form .otp__button {
+  background: #7ecb20 0% 0% no-repeat padding-box;
+  border-radius: 2rem;
+  opacity: 1;
+  width: 100%;
+  height: 3.4rem;
+  text-align: center;
+  font: 600 1.6rem Segoe UI;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+  border: none;
+  margin-top: 1.4rem;
+  cursor: pointer;
+}
+
+.thanks__model {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: calc((100% - 36rem) / 2);
+  bottom: calc((100% - 36rem) / 2);
+  left: calc((100% - 42rem) / 2);
+  right: calc((100% - 42rem) / 2);
+  width: 42rem;
+  height: 36rem;
+  z-index: 20;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 15px;
+  opacity: 1;
+}
+
+.thanks__model .thanks__model__image {
+  margin-top: 13.56rem;
+}
+
+.thanks__model .thanks__model__message {
+  margin-top: 2.1rem;
+  text-align: center;
+  font: 600 1.8rem Segoe UI;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+}
+
+.nav__links .link .dropDown {
+  position: fixed;
+  top: 3.3rem;
+  left: 38.36%;
+  padding: 0.15rem 0.15rem;
+  display: none;
+  flex-direction: column;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 10px #4b494926, 0px -3.5px 8px #4b494926;
+  opacity: 1;
+  z-index: 5;
+}
+
+.nav__links .link .dropDown::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: relative;
+  top: -0.55rem;
+  left: 45%;
+  border-left: 0.45rem solid transparent;
+  border-right: 0.45rem solid transparent;
+  border-bottom: 0.45rem solid white;
+  z-index: 6;
+}
+
+.nav__links .link .dropDown a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.3rem 0.45rem;
+  font: 400 1rem Open Sans;
+  letter-spacing: 0.49px;
+  color: #000000;
+  opacity: 1;
+  border-bottom: 1px solid #4b494926;
+  cursor: pointer;
+}
+
+.nav__links .link .dropDown a:last-child {
+  border-bottom: none;
 }
