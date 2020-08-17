@@ -54,6 +54,54 @@
   display: inline-block;
 }
 
+.nav__links .link .dropDown {
+  position: fixed;
+  top: 4.68rem;
+  left: 31%;
+  padding: 0.15rem 0.15rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 12px #4b494926;
+  opacity: 1;
+  z-index: 5;
+  width: 18.81rem;
+  height: 10rem;
+  border-radius: 0.25rem;
+}
+
+.nav__links .link .dropDown::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: relative;
+  top: -0.55rem;
+  left: 45%;
+  border-left: 0.45rem solid transparent;
+  border-right: 0.45rem solid transparent;
+  border-bottom: 0.45rem solid white;
+  z-index: 6;
+}
+
+.nav__links .link .dropDown a {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0.3rem 0.45rem;
+  font: 400 1.1rem Open Sans;
+  letter-spacing: 0.49px;
+  color: #000000;
+  opacity: 1;
+  border-bottom: 1px solid #4b494926;
+  cursor: pointer;
+  padding: 0.7rem;
+}
+
+.nav__links .link .dropDown a:last-child {
+  border-bottom: none;
+}
+
 .nav__links .link__lighting {
   display: flex;
   justify-content: center;
@@ -72,6 +120,7 @@
   letter-spacing: 0px;
   color: #7ecb20;
   opacity: 1;
+  outline: none;
 }
 
 .header__loginButton {
@@ -87,12 +136,26 @@
   text-align: center;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease-in;
   outline: none;
+  transition: all 0.5s ease-out;
 }
 
 .header__loginButton:hover {
-  transform: scale(1.1, 1.1);
+  transform: scale(1.2, 1.1);
+}
+
+.burger {
+  display: none;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 1.6rem;
+  height: 0.16rem;
+  background: grey;
+  margin: 0.3rem;
+  transition: all 0.4s ease;
 }
 
 /* Hero section */
@@ -388,6 +451,7 @@
 .signUp__model .signUp__form .name {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .signUp__model .signUp__form .name input {
@@ -398,7 +462,7 @@
   height: 2.5rem;
   border-radius: 0.25rem;
   font-size: 0.9rem;
-  width: 48.6%;
+  width: 49.1%;
   padding: 0 0.2rem;
 }
 
@@ -563,45 +627,99 @@
   opacity: 1;
 }
 
-.nav__links .link .dropDown {
-  position: fixed;
-  top: 3.3rem;
-  left: 38.36%;
-  padding: 0.15rem 0.15rem;
-  display: none;
-  flex-direction: column;
-  background: #ffffff 0% 0% no-repeat padding-box;
-  box-shadow: 0px 3px 10px #4b494926, 0px -3.5px 8px #4b494926;
-  opacity: 1;
-  z-index: 5;
+@media screen and (max-width: 1030px) {
+  .navbar__main {
+    padding: 0 1.5rem;
+  }
+
+  .nav__links {
+    justify-content: space-between;
+    width: 75%;
+  }
 }
 
-.nav__links .link .dropDown::before {
-  content: "";
-  width: 0;
-  height: 0;
-  position: relative;
-  top: -0.55rem;
-  left: 45%;
-  border-left: 0.45rem solid transparent;
-  border-right: 0.45rem solid transparent;
-  border-bottom: 0.45rem solid white;
-  z-index: 6;
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navbar__main {
+    z-index: 5;
+    padding: 0 5rem;
+  }
+
+  .nav__links {
+    position: absolute;
+    right: 0px;
+    height: calc(101vh - 78px);
+    width: 40%;
+    top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    opacity: 1;
+    box-shadow: -2px 1px 5px gray;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav__active {
+    transform: translateX(0%);
+  }
+
+  .nav__links .link .dropDown {
+    top: 0;
+    left: -101%;
+    height: 9rem;
+    width: 100%;
+  }
+
+  .nav__links .link .dropDown::before {
+    content: none;
+  }
+
+  .nav__links .link .dropDown a {
+    padding: 0.6rem;
+  }
+
+  .hero {
+    margin-top: 240px;
+  }
+
+  .hero .hero__header {
+    font-size: 1.85rem;
+    width: 70%;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+  .hero .hero__body {
+    font-size: 1.1rem;
+    width: 77%;
+    margin: 0.3rem auto;
+  }
+
+  .hero .hero__button {
+    width: 12rem;
+    height: 2.9rem;
+    font-size: 1.1rem;
+    margin: 0.4rem auto;
+  }
 }
 
-.nav__links .link .dropDown a {
-  display: block;
-  width: 100%;
-  text-align: left;
-  padding: 0.3rem 0.45rem;
-  font: 400 1rem Open Sans;
-  letter-spacing: 0.49px;
-  color: #000000;
-  opacity: 1;
-  border-bottom: 1px solid #4b494926;
-  cursor: pointer;
-}
+@media screen and (max-width: 650px) {
+  .hero .hero__header {
+    width: 100%;
+  }
 
-.nav__links .link .dropDown a:last-child {
-  border-bottom: none;
+  .hero .hero__body {
+    width: 80%;
+  }
 }

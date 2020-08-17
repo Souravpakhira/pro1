@@ -28,6 +28,8 @@ const Navbar = () => {
   };
 
   const signUp = () => {
+    addNavClass.current.classList.remove("nav__active");
+
     if (ModelLogin.current.style.display === "block") {
       ModelLogin.current.style.display = "none";
     }
@@ -41,7 +43,8 @@ const Navbar = () => {
     ModelBg.current.style.display = "none";
   };
 
-  const otp = () => {
+  const otp = (e) => {
+    e.preventDefault();
     ModalSignup.current.style.display = "none";
     ModalOtp.current.style.display = "block";
   };
@@ -74,6 +77,15 @@ const Navbar = () => {
       setTigger(true);
     }
   };
+  const addNavClass = useRef();
+  const onHamClick = () => {
+    addNavClass.current.classList.toggle("nav__active");
+    console.log(addNavClass);
+    if (dropDownRef.current.style.display === "flex") {
+      dropDownRef.current.style.display = "none";
+      setTigger(true);
+    }
+  };
 
   return (
     <>
@@ -81,7 +93,7 @@ const Navbar = () => {
         <div className="header__logo">
           <img src={Logo} alt="" />
         </div>
-        <ul className="nav__links">
+        <ul className="nav__links" ref={addNavClass}>
           <li className="link" onClick={onDropDown}>
             <a href="#" className="link__forYou">
               For You
@@ -113,6 +125,11 @@ const Navbar = () => {
             <p className="buttonText">LOGIN</p>
           </button>
         </ul>
+        <div className="burger" onClick={onHamClick}>
+          <div className="line1"></div>
+          <div className="line2"></div>
+          <div className="line3"></div>
+        </div>
       </nav>
       <Hero />
       <div className="modal__background" ref={ModelBg} onClick={closeAll}></div>
@@ -129,7 +146,7 @@ const Navbar = () => {
           <h2>Student</h2>
           <form>
             <input type="text" placeholder="Email" />
-            <input type="text" placeholder="Password" />
+            <input type="password" placeholder="Password" />
             <p className="forgetPassword">Forget Password?</p>
             <button className="Login">Login</button>
           </form>
